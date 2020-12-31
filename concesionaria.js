@@ -18,9 +18,14 @@ const concesionaria = {
     let autoEncontrado = this.buscarAuto(patente);
     autoEncontrado ? autoEncontrado.vendido=true:"";
     return autoEncontrado.vendido;
+  },
+  autosParaLaVenta: function(){
+    return autos.filter(auto => auto.vendido==false)
   }
 }
 
 // console.log(autos[1].patente)
 // console.log(concesionaria.buscarAuto('APL123'));
-console.log(concesionaria.venderAuto('APL123'))
+// console.log(concesionaria.venderAuto('APL123'))
+
+console.log(concesionaria.autosParaLaVenta())
